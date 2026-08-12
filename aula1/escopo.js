@@ -1,3 +1,5 @@
+const prompt = require('prompt-sync')()
+
 const MENSAGEM_DE_ERRO_TIPO_DEVERIA_SER_NUMBER = "Favor digitar um número";
 
 /* let nome1 = "João";
@@ -11,10 +13,11 @@ console.log(typeof nome1);
 
 console.log(nome1); */
 
+let idadeStr = prompt("Digite sua idade: ");
 
-let idade = 25;
+let idade = Number(idadeStr);
 
-if (typeof idade !== "number") {
+if (idade === NaN) {
     console.log(MENSAGEM_DE_ERRO_TIPO_DEVERIA_SER_NUMBER);
 }
 
