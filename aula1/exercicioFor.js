@@ -19,7 +19,11 @@ const input = require('prompt-sync')();
 
 // Gera um número aleatório inteiro entre 1 e 5
 const numeroRandom = Math.floor(Math.random() * 5) + 1;
-let palpite;
+//Math.floor -> Arredonda para baixo
+//Math.trunc -> Apenas trunca
+//Math.ceil -> Arredonda para cima, teria que colocar uma proteção caso o valor gerado for exatamente ZERO
+//             Math.ceil(Math.random() * 5) || 1
+let palpite = -1;
 //TODO uso para debug console.log("\nnumeroRandom", numeroRandom);
 while (palpite !== numeroRandom) {
   palpite = Number(input("Adivinhe o número (de 1 a 5): "));
@@ -28,4 +32,13 @@ while (palpite !== numeroRandom) {
     console.log("Tente novamente!");
   }
 }
+/*
+Para não precisar inicializar o palpite, poderia se utilizar do .. while
+do { 
+  palpite = Number(input("Adivinhe o número (de 1 a 5): "));
+  if (palpite !== numeroRandom) {
+    console.log("Tente novamente!");
+  }
+} while (palpite !== numeroRandom);  
+*/
 console.log("Você acertou!");
