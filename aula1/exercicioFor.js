@@ -9,10 +9,23 @@ console.log("Já!");
 let soma = 0;
 let i = 1;
 while (i <= 10) {
+  console.log('acumula '+ i + ' em ' + soma);
   soma += i;
+  console.log('acumulou '+soma); 
   i++;
 }
 console.log(`\nA soma é ${soma}`);
+/*
+let soma = 0;
+
+for (let i = 1; i <= 10; i++) {
+  console.log('acumula ' + i + ' em ' + soma);
+  soma += i;
+  console.log('acumulou ' + soma);
+}
+
+console.log(`\nA soma é ${soma}`);
+*/
 //----------------------------------------
 //3-Gere um numero e adivinhe
 const input = require('prompt-sync')();
@@ -24,7 +37,7 @@ const numeroRandom = Math.floor(Math.random() * 5) + 1;
 //Math.ceil -> Arredonda para cima, teria que colocar uma proteção caso o valor gerado for exatamente ZERO
 //             Math.ceil(Math.random() * 5) || 1
 let palpite = -1;
-//TODO uso para debug console.log("\nnumeroRandom", numeroRandom);
+console.log("\nnumeroRandom", numeroRandom);
 while (palpite !== numeroRandom) {
   palpite = Number(input("Adivinhe o número (de 1 a 5): "));
   
