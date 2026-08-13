@@ -12,7 +12,6 @@ console.log("Pós while");
 
 
 let inputStr = prompt("Digite um número: ");
-
 let inputNumber = Number(inputStr);
 
 while (Number.isNaN(inputNumber)) {
